@@ -1,0 +1,12 @@
+
+Aihe: Laivanupotuspeli
+
+Peli‰ k‰ytt‰‰ kaksi pelaajaa, kumpikin vuorollaan.
+
+Kumpikin aloittaa lis‰‰m‰ll‰ laivansa ruudukkoon. 
+Laivoja on eri pituisia ja ne voivat olla pysty tai vaakasuorassa.
+
+Kumpikin ampuu vuorollaan. Ohjelma kertoo jos osuu ja jos uppoaa
+
+Pelin voi lopettaa kesken tai se loppuu kun jomman kumman kaikki laivat on upotettu.
+
