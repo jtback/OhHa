@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohjelmoinnin.harjoitustyo;
+package lyyrantestausta;
 
 /**
  *
  * @author Jukka
  */
-public class OhjelmoinninHarjoitustyo {
+public class LyyranTestausta {
 
     /**
      * @param args the command line arguments

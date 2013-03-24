@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,6 +14,7 @@
 public class Laiva {
     private int koko;
     private int osumia;
+    private ArrayList<Koordinaatti> koordinaatit;
 
     public Laiva(int koko) {
         this.koko = koko;
