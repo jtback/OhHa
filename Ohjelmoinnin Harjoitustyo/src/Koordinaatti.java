@@ -25,6 +25,30 @@ public class Koordinaatti {
         return this.y;
     }
 
+    @Override
+    public String toString() {
+        return "("+this.x+","+this.y+")";
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Koordinaatti other = (Koordinaatti) obj;
+        if (this.x != other.x) {
+            return false;
+        }
+        if (this.y != other.y) {
+            return false;
+        }
+        return true;
+    }
+
     public String koordinaatti(int xarvo, int yarvo){
         String esitys = "";
         esitys +="("+xarvo+","+yarvo+")";
@@ -34,6 +58,6 @@ public class Koordinaatti {
     }
    public Laiva ammuKoordinaattiin(int x, int y){
        
-       return 
+       return null;
    }  
 }

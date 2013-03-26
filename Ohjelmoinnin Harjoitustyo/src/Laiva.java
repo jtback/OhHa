@@ -14,15 +14,33 @@ import java.util.HashMap;
 public class Laiva {
     private int koko;
     private int osumia;
+    private String nimi;
     private ArrayList<Koordinaatti> koordinaatit;
 
-    public Laiva(int koko) {
+    public Laiva(int koko, String nimi) {
+        this.nimi = nimi;
         this.koko = koko;
         this.osumia = 0;
+        this.koordinaatit = new ArrayList<>();
     }
-    public boolean lisaaLaivaRuudukkoon(Koordinaatti alkupaa, Koordinaatti loppupaa){
-        if(alkupaa.getX() == loppupaa.getX()) //Laiva on x-akselin suuntainen
-            
+    @Override
+    public String toString(){
+        return this.nimi;
+        
+    }
+    public boolean lisaaLaivaRuudukkoon(Koordinaatti keula, Koordinaatti pera, HashMap laivaRuudukko) {
+        if(keula.getX() == pera.getX()){ //Laiva on x-akselin suuntainen
+            for(int j = keula.getY(); j<=pera.getY(); j++){
+                Koordinaatti missaLaivaa = new Koordinaatti(keula.getX(),j);
+                if(laivaRuudukko.containsKey(missaLaivaa)){
+                    System.out.println("lisäys ei onnistunut, laivat törmäävät");
+                    return false;
+                }
+                laivaRuudukko.put(missaLaivaa, this);
+                this.koordinaatit.add(missaLaivaa);
+                
+            }
+        }return true;
     }
     
 }
