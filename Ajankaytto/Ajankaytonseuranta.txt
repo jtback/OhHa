@@ -1,0 +1,5 @@
+﻿26.3
+
+
+13.40- 15.15 Gitin käytön harjoittelua eli koodin hakeminen kotoa.
+15.15-19.20: Työskentelyä pajassa. Laivan lisääminen ja päällekkäisyyksien estäminen.
