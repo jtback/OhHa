@@ -19,10 +19,10 @@ public class Paaohjelma {
         ruudukko.tulostaRuudukko();
         Laiva tykkivene =new Laiva(2,"tykkivene");
         Laiva risteilija = new Laiva(4,"risteilija");
-        if(tykkivene.lisaaLaivaRuudukkoon(new Koordinaatti(1,2), new Koordinaatti(1,3),ruudukko.getLaivojenKoordinaatit())){
+        if(tykkivene.lisaaLaivaRuudukkoon(new Koordinaatti(1,2), new Koordinaatti(1,3),ruudukko)){
             System.out.println("Lisäys Onnistui");
         }
-        if(risteilija.lisaaLaivaRuudukkoon(new Koordinaatti(1,0), new Koordinaatti(1,3),ruudukko.getLaivojenKoordinaatit())){
+        if(risteilija.lisaaLaivaRuudukkoon(new Koordinaatti(1,0), new Koordinaatti(1,3),ruudukko)){
             System.out.println("Lisäys Onnistui");
         }
         //ruudukko.ammuRuudukkoon();

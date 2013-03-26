@@ -28,15 +28,16 @@ public class Laiva {
         return this.nimi;
         
     }
-    public boolean lisaaLaivaRuudukkoon(Koordinaatti keula, Koordinaatti pera, HashMap laivaRuudukko) {
+    public boolean lisaaLaivaRuudukkoon(Koordinaatti keula, Koordinaatti pera, Ruudukko ruudukko) {
         if(keula.getX() == pera.getX()){ //Laiva on x-akselin suuntainen
             for(int j = keula.getY(); j<=pera.getY(); j++){
                 Koordinaatti missaLaivaa = new Koordinaatti(keula.getX(),j);
-                if(laivaRuudukko.containsKey(missaLaivaa)){
+                if(ruudukko.getLaivojenKoordinaatit().containsKey(missaLaivaa)){
                     System.out.println("lisäys ei onnistunut, laivat törmäävät");
                     return false;
                 }
-                laivaRuudukko.put(missaLaivaa, this);
+                ruudukko.putLaivanKoordinaatit(missaLaivaa, this);
+                
                 this.koordinaatit.add(missaLaivaa);
                 
             }
