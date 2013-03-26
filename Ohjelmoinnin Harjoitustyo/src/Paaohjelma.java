@@ -17,6 +17,7 @@ public class Paaohjelma {
         
         Ruudukko ruudukko = new Ruudukko(4, lukija);
         ruudukko.tulostaRuudukko();
+        ruudukko.ammuRuudukkoon();
     }
     
 }

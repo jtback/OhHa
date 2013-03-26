@@ -17,10 +17,23 @@ public class Koordinaatti {
         this.y = y;
     }
 
-    public String Koordinaatti(int xarvo, int yarvo){
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+    }
+
+    public String koordinaatti(int xarvo, int yarvo){
         String esitys = "";
-        esitys += "("xarvo+","+yarvo+")";
+        esitys +="("+xarvo+","+yarvo+")";
+        
         
         return esitys;  
     }
+   public Laiva ammuKoordinaattiin(int x, int y){
+       
+       return 
+   }  
 }

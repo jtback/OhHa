@@ -20,6 +20,9 @@ public class Laiva {
         this.koko = koko;
         this.osumia = 0;
     }
-    
+    public boolean lisaaLaivaRuudukkoon(Koordinaatti alkupaa, Koordinaatti loppupaa){
+        if(alkupaa.getX() == loppupaa.getX()) //Laiva on x-akselin suuntainen
+            
+    }
     
 }
