@@ -77,9 +77,10 @@ public class Ruudukko {
     
 
     public Koordinaatti koordinaattiTaulukosta(int x, int y) {
-        Koordinaatti viiteRuudunMahdolliseenKoordinaattiin;
-        viiteRuudunMahdolliseenKoordinaattiin = this.ruudukko[x][y];
-        return viiteRuudunMahdolliseenKoordinaattiin;
+        Koordinaatti viiteTaulukonAlkionMahdolliseenKoordinaattiin;
+        viiteTaulukonAlkionMahdolliseenKoordinaattiin = this.ruudukko[x][y];
+        
+        return viiteTaulukonAlkionMahdolliseenKoordinaattiin;
     }
     // public void pyyhiKoordinaattiRuudukosta(int x, int y){//Jos laivan lisääminen epäonnistuu ja sille on lisätty koordinaatti
 
@@ -101,11 +102,12 @@ public class Ruudukko {
     public void ammuRuudukkoon(int x, int y) {
 
         System.out.println("Ammuit pisteeseen (" + x + "," + y + ")");
-
-        Laiva kohde = laivojenKoordinaatit.get(new Koordinaatti(x, y));
+       // ammuRuutuun()
+        Laiva kohde = laivojenKoordinaatit.get(this.koordinaattiTaulukosta(x, y));
         // kohde = new Laiva(2,);
         if (kohde == null) {
             System.out.println("ei osunut");
+            
         }
     }
 }

@@ -35,7 +35,7 @@ public class LaivaTest {
        kuunari = new Laiva(3, "kuunari");
        parkki = new Laiva(3, "parkki");
        ruudukko = new Ruudukko(5);        
-        boolean tulos1 = parkki.lisaaLaivaRuudukkoon(new Koordinaatti(0, 0), new Koordinaatti(0, 2), ruudukko);
+        boolean tulos1 = parkki.lisaaLaivaRuudukkoon(0, 0, ruudukko);
         
     }
     
@@ -49,7 +49,10 @@ public class LaivaTest {
     @Test
     public void samojenKoordinaattienAntaminenLaivoilleEiOnnistu(){
         
-        assertEquals(false, kuunari.lisaaLaivaRuudukkoon(0, 2, ruudukko));
+        assertEquals(false, kuunari.lisaaLaivaRuudukkoon(0, 0, ruudukko));
+        
+    }
+    @Test void osumaKasvattaaOsumiaMuuttujaa(){
         
     }
     // TODO add test methods here.

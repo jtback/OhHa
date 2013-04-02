@@ -56,7 +56,7 @@ public class Koordinaatti {
         
         return esitys;  
     }
-   public Laiva ammuKoordinaattiin(int x, int y){
+   public Laiva ammuKoordinaattiin(int x, int y, Ruudukko ruudukko){
        
        return null;
    }  

@@ -34,13 +34,23 @@ public class Paaohjelma {
         if (tykkivene.lisaaLaivaRuudukkoon(1, 1, ruudukko)) {
             System.out.println("Laivan lisäys Onnistui");
         }
-        if (risteilija.lisaaLaivaRuudukkoon(0,0, ruudukko)) {
+        if (risteilija.lisaaLaivaRuudukkoon(1,0, ruudukko)) {
             System.out.println("Lisäys Onnistui");
         }
         else System.out.println("Lisäys epäonnistui");
         //ruudukko.ammuRuudukkoon();
         System.out.println(ruudukko.tulostaLaivojenKoordinaatit());
+        AmpujanRuudukko ampuja = new AmpujanRuudukko(ruudukko);
+        Peliruutu peliruutu= new Peliruutu(ruudukko, ampuja);
+        System.out.println(peliruutu);
+        peliruutu.ruudussaOsuma();
+        System.out.println(peliruutu);
         
+        ampuja.alustaRuudukko();
+        ampuja.tulostaRuudukko();
+        ruudukko.tulostaRuudukko();
+        ampuja.ammuRuutuun(3, 3);
+        ampuja.ammuRuutuun(1, 1);
     }
     
 
