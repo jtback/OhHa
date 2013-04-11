@@ -47,6 +47,7 @@ public class Peliruutu {
 
     public boolean Osuuko(int x, int y) {
         Koordinaatti laukauksenKohde = this.kohderuudukko.koordinaattiTaulukosta(x, y);
+        
         if (laukauksenKohde == null) {
             this.ruudussaEiLaivaa();
             return false;
@@ -54,10 +55,12 @@ public class Peliruutu {
         HashMap<Koordinaatti, Laiva> taulu = this.kohderuudukko.getLaivojenKoordinaatit();
         Laiva kohdeLaiva = taulu.get(laukauksenKohde);
         if(kohdeLaiva.getOsumattomatKoordinaatit().contains(laukauksenKohde)){    
-            kohdeLaiva.uusiOsuma(laukauksenKohde, this.ampujanruudukko);
             this.ruudussaOsuma();
+            kohdeLaiva.uusiOsuma(laukauksenKohde, this.ampujanruudukko);
             return true;
-        }return false;
+        }
+        
+        return true;
         
 
     }

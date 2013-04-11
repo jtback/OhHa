@@ -99,15 +99,15 @@ public class Ruudukko {
         }
     }
 
-    public void ammuRuudukkoon(int x, int y) {
-
-        System.out.println("Ammuit pisteeseen (" + x + "," + y + ")");
-       // ammuRuutuun()
-        Laiva kohde = laivojenKoordinaatit.get(this.koordinaattiTaulukosta(x, y));
-        // kohde = new Laiva(2,);
-        if (kohde == null) {
-            System.out.println("ei osunut");
-            
-        }
-    }
+//    public void ammuRuudukkoon(int x, int y) {
+//
+//        System.out.println("Ammuit pisteeseen (" + x + "," + y + ")");
+//       // ammuRuutuun()
+//        Laiva kohde = laivojenKoordinaatit.get(this.koordinaattiTaulukosta(x, y));
+//        // kohde = new Laiva(2,);
+//        if (kohde == null) {
+//            System.out.println("ei osunut");
+//            
+//        }
+//    }
 }

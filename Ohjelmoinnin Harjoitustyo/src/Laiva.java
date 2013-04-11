@@ -39,11 +39,12 @@ public class Laiva {
         }
 
     }
-    public void lisaaUponneetRuudut(AmpujanRuudukko ruudukko){
+    public void lisaaUponneetRuudut(AmpujanRuudukko ampujanRuudukko){
         for(Koordinaatti laivanKohta : this.kaikkiKoordinaatit){
             int x = laivanKohta.getX();
             int y = laivanKohta.getY();
-            ruudukko.lisaaUponnutRuutu(x, y);
+            ampujanRuudukko.lisaaUponnutRuutu(x, y);
+       //     System.out.println(this.kaikkiKoordinaatit);
         }
     }
     

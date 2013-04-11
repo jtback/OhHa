@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 
 /*
  * To change this template, choose Tools | Templates
@@ -26,7 +27,9 @@ public class Paaohjelma {
          * System.out.println("Lisäys onnistui");
          * } else {
          * System.out.println("lisäys ei onnistunut");
-    }*/
+    }*/ 
+        
+        
         ruudukko.koordinaattiTaulukkoon(4, 5);
         ruudukko.tulostaRuudukko();
         Laiva tykkivene = new Laiva(2, "tykkivene");
@@ -51,6 +54,10 @@ public class Paaohjelma {
         ruudukko.tulostaRuudukko();
         ampuja.ammuRuutuun(3, 3);
         ampuja.ammuRuutuun(1, 1);
+        ampuja.ammuRuutuun(1, 0);
+        ampuja.ammuRuutuun(1, 2);
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(ruudukko, ampuja);
+        SwingUtilities.invokeLater(kayttoliittyma);
     }
     
 

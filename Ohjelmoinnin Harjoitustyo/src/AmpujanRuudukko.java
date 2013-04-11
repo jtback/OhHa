@@ -8,12 +8,12 @@
  * @author Jukka
  */
 public class AmpujanRuudukko {
-    private Ruudukko vastustaja;
+    private Ruudukko kohderuudukko;
     private Peliruutu[][] ruudut;
     private int sivunpituus;
 
     public AmpujanRuudukko(Ruudukko vastustaja) {
-        this.vastustaja = vastustaja;
+        this.kohderuudukko = vastustaja;
         this.sivunpituus = vastustaja.getSivunPituus();
         this.ruudut = new Peliruutu[sivunpituus][sivunpituus];
         
@@ -21,14 +21,18 @@ public class AmpujanRuudukko {
     public  void alustaRuudukko(){
         for(int i = 0; i < this.sivunpituus; i++){
             for(int j = 0; j < this.sivunpituus; j++){
-                ruudut[i][j]= new Peliruutu(vastustaja, this);
+                ruudut[i][j]= new Peliruutu(kohderuudukko, this);
             }
         }
     }
 
+    public Peliruutu[][] getRuudut() {
+        return ruudut;
+    }
+
     
     public void ammuRuutuun(int x, int y){
-        if(this.ruudut[x][y].Osuuko(x, y))
+        if(this.ruudut[x][y].Osuuko(x, y))//kutsuu Peliruudun metodia
             System.out.println("osui");
         else 
             System.out.println("Ei osunut");
