@@ -2,6 +2,8 @@
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,12 +37,15 @@ public class Kayttoliittyma implements Runnable {
         int ruutujaSivulla = kohderuudukko.getSivunPituus();
         GridLayout ruudukko = new GridLayout(ruutujaSivulla, ruutujaSivulla);
         container.setLayout(ruudukko);
-        Peliruutu[][] peliruudut = ammuntaruudukko.getRuudut();
-
+        Peliruutu[][] peliruudut = this.ammuntaruudukko.getRuudut();
+        
 
         for (int i = 0; i < ruutujaSivulla; i++) {
             for (int j = 0; j < ruutujaSivulla; j++) {
-                container.add(new JButton(peliruudut[i][j].toString()));
+                JButton lisattavaNappi =new JButton(peliruudut[i][j].tila.toString());
+                NapinKuuntelija kuuntelija = new NapinKuuntelija(this.ammuntaruudukko, i, j); 
+                        lisattavaNappi.addActionListener(kuuntelija);
+                container.add(lisattavaNappi);
             }
         }
 
