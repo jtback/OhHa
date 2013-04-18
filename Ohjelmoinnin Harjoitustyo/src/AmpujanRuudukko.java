@@ -39,9 +39,9 @@ public class AmpujanRuudukko {
         this.tulostaRuudukko();
     }
     
-    public void lisaaUponnutRuutu(int x, int y){
+ /*   public void lisaaUponnutRuutu(int x, int y){
         ruudut[x][y].ruudunLaivaUponnut();
-    }
+    }*/
     public void tulostaRuutu(int x, int y){
         System.out.print(ruudut[x][y]+" ");
                 

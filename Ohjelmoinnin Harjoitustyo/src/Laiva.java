@@ -39,11 +39,19 @@ public class Laiva {
         }
 
     }
+    /**
+     * Metodi kutsuu Ampujanruudukon metodia getRuudut, jotta pystytään viittaamaan
+     * käsiteltävään Peliruutu-olioon. 
+     * @param ampujanRuudukko 
+     */
     public void lisaaUponneetRuudut(AmpujanRuudukko ampujanRuudukko){
+        Peliruutu[][] ruudut = ampujanRuudukko.getRuudut();
+        
         for(Koordinaatti laivanKohta : this.kaikkiKoordinaatit){
             int x = laivanKohta.getX();
             int y = laivanKohta.getY();
-            ampujanRuudukko.lisaaUponnutRuutu(x, y);
+            ruudut[x][y].ruudunLaivaUponnut();
+             
        //     System.out.println(this.kaikkiKoordinaatit);
         }
     }
@@ -73,9 +81,10 @@ public class Laiva {
         } else {
             for (int j = y; j <= y + this.koko - 1; j++) {
                 ruudukko.koordinaattiTaulukkoon(x, j);
-                ruudukko.putLaivanKoordinaatit(ruudukko.koordinaattiTaulukosta(x, j), this);
-                this.osumattomatKoordinaatit.add(ruudukko.koordinaattiTaulukosta(x, j));
-                this.kaikkiKoordinaatit.add(ruudukko.koordinaattiTaulukosta(x, j));
+                Koordinaatti koordinaatti =ruudukko.koordinaattiTaulukosta(x, j);
+                ruudukko.putLaivanKoordinaatti(koordinaatti, this);
+                this.osumattomatKoordinaatit.add(koordinaatti);
+                this.kaikkiKoordinaatit.add(koordinaatti);
             }
         }
         return true;

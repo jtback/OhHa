@@ -27,7 +27,7 @@ public class Ruudukko {
 
     }
 
-    public void putLaivanKoordinaatit(Koordinaatti laivanSisaltavaKoordinaatti, Laiva laiva) {
+    public void putLaivanKoordinaatti(Koordinaatti laivanSisaltavaKoordinaatti, Laiva laiva) {
         this.laivojenKoordinaatit.put(laivanSisaltavaKoordinaatti, laiva);
 
     }
@@ -55,7 +55,7 @@ public class Ruudukko {
         if (this.annetutKoordinaatitOk(x, y) && this.ruudukko[x][y] == null) {
             return true;
 
-        } else {
+        } else { 
             return false;
         }
     }
@@ -67,7 +67,7 @@ public class Ruudukko {
                 return true;
             }
            
-            else System.out.println("Koordinaatti on varattu");                
+            else 
                          
                 return false;
             }

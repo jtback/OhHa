@@ -22,14 +22,7 @@ public class LaivaTest {
     public LaivaTest() {
     }
     
-//    @BeforeClass
-//    public static void setUpClass() {
-//    }
-//    
-//    @AfterClass
-//    public static void tearDownClass() {
-//    }
-//    
+
     @Before
     public void setUp() {
        kuunari = new Laiva(3, "kuunari");
@@ -39,9 +32,7 @@ public class LaivaTest {
         
     }
     
-//    @After
-//    public void tearDown() {
-//    }
+
     @Test
     public void konstruktoriAsettaaArvotOikein(){
     assertEquals("parkki", parkki.toString());
@@ -52,7 +43,8 @@ public class LaivaTest {
         assertEquals(false, kuunari.lisaaLaivaRuudukkoon(0, 0, ruudukko));
         
     }
-    @Test void osumaKasvattaaOsumiaMuuttujaa(){
+    @Test 
+           public void osumaKasvattaaOsumiaMuuttujaa(){
         
     }
     // TODO add test methods here.

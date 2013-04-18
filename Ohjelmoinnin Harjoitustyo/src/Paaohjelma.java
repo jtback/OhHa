@@ -52,10 +52,10 @@ public class Paaohjelma {
         ampuja.alustaRuudukko();
         ampuja.tulostaRuudukko();
         ruudukko.tulostaRuudukko();
-        ampuja.ammuRuutuun(3, 3);
-        ampuja.ammuRuutuun(1, 1);
-        ampuja.ammuRuutuun(1, 0);
-        ampuja.ammuRuutuun(1, 2);
+//        ampuja.ammuRuutuun(3, 3);
+//        ampuja.ammuRuutuun(1, 1);
+//        ampuja.ammuRuutuun(1, 0);
+//        ampuja.ammuRuutuun(1, 2);
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(ruudukko, ampuja);
         SwingUtilities.invokeLater(kayttoliittyma);
     }
