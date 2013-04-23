@@ -1,3 +1,5 @@
+package Sovelluslogiikka;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,8 +18,7 @@ public class Ruudukko {
     private Koordinaatti[][] ruudukko;
     private int sivunPituus;
     private HashMap<Koordinaatti, Laiva> laivojenKoordinaatit;
-    private ArrayList<Koordinaatti> kaytossaOlevatKoordinaatit;
-    private Scanner lukija;
+
 
     public Ruudukko(int sivunPituus) {
         this.ruudukko = new Koordinaatti[sivunPituus][sivunPituus];
@@ -82,9 +83,7 @@ public class Ruudukko {
         
         return viiteTaulukonAlkionMahdolliseenKoordinaattiin;
     }
-    // public void pyyhiKoordinaattiRuudukosta(int x, int y){//Jos laivan lisääminen epäonnistuu ja sille on lisätty koordinaatti
 
-    // }
     public String tulostaLaivojenKoordinaatit() {
         String rivi = this.laivojenKoordinaatit.toString();
         return rivi;
@@ -99,15 +98,5 @@ public class Ruudukko {
         }
     }
 
-//    public void ammuRuudukkoon(int x, int y) {
-//
-//        System.out.println("Ammuit pisteeseen (" + x + "," + y + ")");
-//       // ammuRuutuun()
-//        Laiva kohde = laivojenKoordinaatit.get(this.koordinaattiTaulukosta(x, y));
-//        // kohde = new Laiva(2,);
-//        if (kohde == null) {
-//            System.out.println("ei osunut");
-//            
-//        }
-//    }
+
 }

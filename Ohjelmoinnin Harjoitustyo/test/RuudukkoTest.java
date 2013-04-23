@@ -3,6 +3,9 @@
  * and open the template in the editor.
  */
 
+import Sovelluslogiikka.Laiva;
+import Sovelluslogiikka.Koordinaatti;
+import Sovelluslogiikka.Ruudukko;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

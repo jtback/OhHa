@@ -1,6 +1,11 @@
 
+import Sovelluslogiikka.Laiva;
+import kayttoliittyma.Kayttoliittyma;
+import Sovelluslogiikka.AmpujanRuudukko;
+import Sovelluslogiikka.Ruudukko;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
+import kayttoliittyma.LaivojenLisays;
 
 /*
  * To change this template, choose Tools | Templates
@@ -16,7 +21,7 @@ public class Paaohjelma {
 
         Scanner lukija = new Scanner(System.in);
 
-        Ruudukko ruudukko = new Ruudukko(4);
+        Ruudukko ruudukko = new Ruudukko(5);
         ruudukko.tulostaRuudukko();
         /*               if (ruudukko.koordinaattiTaulukkoon(0, 2)) {
          * System.out.println("Lisäys onnistui");
@@ -34,30 +39,34 @@ public class Paaohjelma {
         ruudukko.tulostaRuudukko();
         Laiva tykkivene = new Laiva(2, "tykkivene");
         Laiva risteilija = new Laiva(4, "risteilija");
-        if (tykkivene.lisaaLaivaRuudukkoon(1, 1, ruudukko)) {
+        Laiva kuunari = new Laiva(3, "kuunari");
+        if (tykkivene.lisaaLaivaRuudukkoon(1, 1, ruudukko, true)) {
             System.out.println("Laivan lisäys Onnistui");
         }
-        if (risteilija.lisaaLaivaRuudukkoon(1,0, ruudukko)) {
+        if (risteilija.lisaaLaivaRuudukkoon(1,0, ruudukko,true)) {
             System.out.println("Lisäys Onnistui");
         }
         else System.out.println("Lisäys epäonnistui");
-        //ruudukko.ammuRuudukkoon();
-        System.out.println(ruudukko.tulostaLaivojenKoordinaatit());
-        AmpujanRuudukko ampuja = new AmpujanRuudukko(ruudukko);
-        Peliruutu peliruutu= new Peliruutu(ruudukko, ampuja);
-        System.out.println(peliruutu);
-        peliruutu.ruudussaOsuma();
-        System.out.println(peliruutu);
         
+        if(kuunari.lisaaLaivaRuudukkoon(0, 1, ruudukko, false))
+            System.out.println("pystyyn lisäys onnistui");
+        else 
+            System.out.println("pystyyn lisäys epäonnistui");
+        System.out.println(ruudukko.tulostaLaivojenKoordinaatit());
+ 
+//        System.out.println(ruudukko.tulostaLaivojenKoordinaatit());
+          AmpujanRuudukko ampuja = new AmpujanRuudukko(ruudukko);
+
         ampuja.alustaRuudukko();
         ampuja.tulostaRuudukko();
-        ruudukko.tulostaRuudukko();
+       ruudukko.tulostaRuudukko();
 //        ampuja.ammuRuutuun(3, 3);
 //        ampuja.ammuRuutuun(1, 1);
 //        ampuja.ammuRuutuun(1, 0);
 //        ampuja.ammuRuutuun(1, 2);
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(ruudukko, ampuja);
-        SwingUtilities.invokeLater(kayttoliittyma);
+          LaivojenLisays laivojenlisays = new LaivojenLisays(ruudukko, "Niklas");  
+          Kayttoliittyma kayttoliittyma = new Kayttoliittyma(ruudukko, ampuja);
+          SwingUtilities.invokeLater(laivojenlisays);
     }
     
 

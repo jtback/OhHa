@@ -1,3 +1,5 @@
+package Sovelluslogiikka;
+
 
 import java.util.HashMap;
 
@@ -24,6 +26,10 @@ public class Peliruutu {
         RuudunTila(String tekstina) {
             this.tekstina = tekstina;
         }
+    }
+
+    public RuudunTila getTila() {
+        return tila;
     }
 
     public Peliruutu(Ruudukko Kohderuudut, AmpujanRuudukko ampujanRuudukko) {

@@ -1,3 +1,9 @@
+package Sovelluslogiikka;
+
+
+import Sovelluslogiikka.Peliruutu;
+import Sovelluslogiikka.Ruudukko;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -31,14 +37,19 @@ public class AmpujanRuudukko {
     }
 
     
-    public void ammuRuutuun(int x, int y){
-        if(this.ruudut[x][y].Osuuko(x, y))//kutsuu Peliruudun metodia
+    public boolean ammuRuutuun(int x, int y){
+        if(this.ruudut[x][y].Osuuko(x, y)){//kutsuu Peliruudun metodia
             System.out.println("osui");
-        else 
+            this.tulostaRuudukko();
+        return true;
+        }
+        else {
             System.out.println("Ei osunut");
+            
         this.tulostaRuudukko();
+        return false;
     }
-    
+    }
  /*   public void lisaaUponnutRuutu(int x, int y){
         ruudut[x][y].ruudunLaivaUponnut();
     }*/

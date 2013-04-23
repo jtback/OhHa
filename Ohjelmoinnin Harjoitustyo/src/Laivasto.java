@@ -1,4 +1,6 @@
 
+import Sovelluslogiikka.Laiva;
+import Sovelluslogiikka.Koordinaatti;
 import java.util.ArrayList;
 import java.util.HashMap;
 
