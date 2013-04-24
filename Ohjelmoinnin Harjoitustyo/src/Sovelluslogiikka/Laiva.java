@@ -71,7 +71,7 @@ public class Laiva {
 
     @Override
     public String toString() {
-        return this.nimi;
+        return this.nimi+": pituus "+this.koko;
 
     }
     /* LisäälaivaRuudukkoon testaa onko kaikki pyydetyt koordinaatit vapaina. Jos

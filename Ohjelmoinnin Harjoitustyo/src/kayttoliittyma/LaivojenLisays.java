@@ -4,14 +4,22 @@
  */
 package kayttoliittyma;
 
+import Kaynnistys.Paaohjelma;
+import Sovelluslogiikka.Laiva;
+import Sovelluslogiikka.Laivasto;
 import Sovelluslogiikka.Ruudukko;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 /**
@@ -23,17 +31,46 @@ public class LaivojenLisays implements Runnable {
     private JFrame frame;
     private Ruudukko ruudukko;
     private String Pelaaja;
+    private boolean vaakaanko;
+    private Laivasto laivasto;
+    private Laiva lisattava;
+    private Kayttoliittyma kayttoliittyma;
+    private HashMap<String, JButton>  nappulataulu;
 
-    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja) {
+    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, Kayttoliittyma k) {
 
         this.ruudukko = ruudukko;
         this.Pelaaja = Pelaaja;
+        this.laivasto = laivasto;
+        this.kayttoliittyma= k;
     }
-
+    public boolean getVaakaanko(){
+        return this.vaakaanko;
+    }
+    public void lisaysPystyyn(){
+        
+            vaakaanko = false;
+    }
+    public void lisaysVaakaan(){
+        vaakaanko = true;
+    }
+    public boolean seuraavaLisattava(){
+        if(!laivasto.listaOnTyhja()){ 
+        this.lisattava = laivasto.otaLaiva();
+        return true;
+        }else {
+            frame.setVisible(false);
+            SwingUtilities.invokeLater(kayttoliittyma);
+            return false;
+        }
+    }
+    public Laiva getLisattava(){
+        return this.lisattava;
+    }
     @Override
     public void run() {
         frame = new JFrame("Lisää laivat");
-        frame.setPreferredSize(new Dimension(500, 600));
+        frame.setPreferredSize(new Dimension(600, 500));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,25 +84,54 @@ public class LaivojenLisays implements Runnable {
         System.out.println("ruutujaSivulla: "+ruutujaSivulla);
         GridLayout ruudut = new GridLayout(ruutujaSivulla, ruutujaSivulla);
         JPanel panel = new JPanel(ruudut);
-        
+        nappulataulu = new HashMap<>();
         GridLayout suuntaValinta = new GridLayout(3, 1);
         JPanel panel2 = new JPanel(suuntaValinta);
+        ActionListener suunnanValinta = new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                if("vaakaan".equals(ae.getActionCommand())){
+                System.out.println("Vaakaan");
+                lisaysVaakaan();
+                }else if("pystyyn".equals(ae.getActionCommand())){
+                System.out.println("Pystyyn");
+                lisaysPystyyn();
+                } else{
+                    // some thing went horribly wrong
+                }
+                System.out.println("vaakaan = "+vaakaanko);
+                
+
+            }
+        };
+        
         JButton vaakaan = new JButton("Lisää laiva vaakaan");
         JButton pystyyn = new JButton("Lisää laiva pystyyn");
+        vaakaan.setActionCommand("vaakaan");
+        vaakaan.addActionListener(suunnanValinta);
+        pystyyn.setActionCommand("pystyyn");
+        pystyyn.addActionListener(suunnanValinta);
         panel2.add(vaakaan);
         panel2.add(pystyyn);
+        lisattava = laivasto.otaLaiva();
+        panel2.add(new JLabel(lisattava.toString()));
         container.setLayout(new BorderLayout());
+        
         for (int i = 0; i < ruutujaSivulla; i++) {
             for (int j = 0; j < ruutujaSivulla; j++) {
-                JButton lisattavaNappi =new JButton();
-                
+                JButton lisattavaNappi =new JButton("("+i+","+j+")");//Jos loisi luokan JNappula extends JButton
+                String teksti = lisattavaNappi.getText();
+                nappulataulu.put(teksti, lisattavaNappi);
+                LisayksenKuuntelija k= new LisayksenKuuntelija(ruudukko, i, j, this, lisattava );
+                lisattavaNappi.addActionListener(k);
                 panel.add(lisattavaNappi);
             }
         }
        container.add(panel, BorderLayout.CENTER);
-//        container.add(panel2, BorderLayout.LINE_END);
+        container.add(panel2, BorderLayout.LINE_END);
     }
-    
+   
     
      public JFrame getFrame() {
         return frame;

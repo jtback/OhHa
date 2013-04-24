@@ -1,3 +1,5 @@
+package Sovelluslogiikka;
+
 
 import Sovelluslogiikka.Laiva;
 import Sovelluslogiikka.Koordinaatti;
@@ -17,10 +19,20 @@ public class Laivasto {
     private ArrayList<Laiva>laivat;
     private HashMap<Laiva, ArrayList<Koordinaatti>>laivojenKoordinaatit;
 
-    public Laivasto(ArrayList<Laiva> laivat) {
-        this.laivat = laivat;
+    public Laivasto() {
+        laivat = new ArrayList<>();
     }
-    
-     
+    public void lisaaLaiva(Laiva laiva){
+        laivat.add(laiva);
+    }
+    public Laiva otaLaiva(){
+        Laiva laiva = laivat.remove(0);
+        return laiva;
+    }
+    public boolean listaOnTyhja(){
+        if(laivat.isEmpty()){
+            return true;
+        }else return false;
+    } 
    
 }
