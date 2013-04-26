@@ -1,6 +1,5 @@
 package Sovelluslogiikka;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -18,16 +17,23 @@ public class Ruudukko {
     private Koordinaatti[][] ruudukko;
     private int sivunPituus;
     private HashMap<Koordinaatti, Laiva> laivojenKoordinaatit;
-
+    private ArrayList<Koordinaatti> kaytetytKoordinaatit;
 
     public Ruudukko(int sivunPituus) {
         this.ruudukko = new Koordinaatti[sivunPituus][sivunPituus];
         this.sivunPituus = sivunPituus;
-
+        this.kaytetytKoordinaatit = new ArrayList<>();
         this.laivojenKoordinaatit = new HashMap<>();
 
     }
 
+    /**
+     * HashMappiin tallenetaan avaimena Koordinaatti-olioita joihin kiinnitetään
+     * Laivaolioita.
+     *
+     * @param laivanSisaltavaKoordinaatti
+     * @param laiva
+     */
     public void putLaivanKoordinaatti(Koordinaatti laivanSisaltavaKoordinaatti, Laiva laiva) {
         this.laivojenKoordinaatit.put(laivanSisaltavaKoordinaatti, laiva);
 
@@ -35,6 +41,10 @@ public class Ruudukko {
 
     public HashMap<Koordinaatti, Laiva> getLaivojenKoordinaatit() {
         return laivojenKoordinaatit;
+    }
+
+    public void koordinaattiKaytetty(Koordinaatti k) {
+        this.kaytetytKoordinaatit.add(k);
     }
 
     public int getSivunPituus() {
@@ -53,35 +63,31 @@ public class Ruudukko {
     }
 
     public boolean koordinaattiVapaana(int x, int y) {
-        if (this.annetutKoordinaatitOk(x, y) && this.ruudukko[x][y] == null) {
-            return true;
 
-        } else { 
+        if (!this.annetutKoordinaatitOk(x, y)) {
             return false;
+        }
+
+        Koordinaatti k = koordinaattiTaulukosta(x, y);
+        if (this.kaytetytKoordinaatit.contains(k)) {
+            return false;
+        } else {
+            return true;
         }
     }
 
-    public boolean koordinaattiTaulukkoon(int x, int y) {
-        if (annetutKoordinaatitOk(x, y)) {
-            if (this.ruudukko[x][y] == null) {
-                this.ruudukko[x][y] = new Koordinaatti(x, y);
-                return true;
-            }
-           
-            else 
-                         
-                return false;
-            }
-        System.out.println("Antamasi arvot eivät mahdu taulukkoon. Taulukon koko on " + sivunPituus + "x" + sivunPituus);
-        return false;
-        }
-    
+    public void koordinaattiTaulukkoon(Koordinaatti koordinaatti) {
+        int x = koordinaatti.getX();
+        int y = koordinaatti.getY();
+        this.ruudukko[x][y] = koordinaatti;
+
+    }
 
     public Koordinaatti koordinaattiTaulukosta(int x, int y) {
-        Koordinaatti viiteTaulukonAlkionMahdolliseenKoordinaattiin;
-        viiteTaulukonAlkionMahdolliseenKoordinaattiin = this.ruudukko[x][y];
-        
-        return viiteTaulukonAlkionMahdolliseenKoordinaattiin;
+        Koordinaatti k;
+        k = this.ruudukko[x][y];
+
+        return k;
     }
 
     public String tulostaLaivojenKoordinaatit() {
@@ -97,6 +103,4 @@ public class Ruudukko {
             System.out.println("");
         }
     }
-
-
 }

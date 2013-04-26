@@ -17,14 +17,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
-public class Kayttoliittyma implements Runnable {
+public class AmpuminenGUI implements Runnable {
 
     private JFrame frame;
     private Ruudukko kohderuudukko;
     private AmpujanRuudukko ammuntaruudukko;
   //  private JButton lisattavaNappi;
 
-    public Kayttoliittyma(Ruudukko ruudukko, AmpujanRuudukko ampuja) {
+    public AmpuminenGUI(Ruudukko ruudukko, AmpujanRuudukko ampuja) {
          kohderuudukko = ruudukko;
          ammuntaruudukko = ampuja;
          
@@ -59,7 +59,7 @@ public class Kayttoliittyma implements Runnable {
             }
         }
 
-    }
+}
 
     public JFrame getFrame() {
         return frame;

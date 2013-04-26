@@ -2,6 +2,7 @@ package Sovelluslogiikka;
 
 
 import Sovelluslogiikka.Ruudukko;
+import javax.swing.JButton;
 
 /*
  * To change this template, choose Tools | Templates
@@ -16,10 +17,15 @@ public class Koordinaatti {
 
     private int x;
     private int y;
+    private JButton nappula;
+    private Laiva koordinaatinLaiva;
 
-    public Koordinaatti(int x, int y) {
+    public Koordinaatti(int x, int y, JButton Nappula) {
         this.x = x;
         this.y = y;
+        this.nappula = Nappula;
+        
+        
     }
 
     public int getX() {
@@ -28,6 +34,19 @@ public class Koordinaatti {
 
     public int getY() {
         return this.y;
+    }
+
+    public JButton getNappula() {
+        return nappula;
+    }
+
+    public void setKoordinaatinLaiva(Laiva koordinaatinLaiva) {
+        this.koordinaatinLaiva = koordinaatinLaiva;
+        System.out.println(this.toString());
+    }
+
+    public Laiva getKoordinaatinLaiva() {
+        return koordinaatinLaiva;
     }
 
     @Override
@@ -54,15 +73,6 @@ public class Koordinaatti {
         return true;
     }
 
-    public String koordinaatti(int xarvo, int yarvo){
-        String esitys = "";
-        esitys +="("+xarvo+","+yarvo+")";
-        
-        
-        return esitys;  
-    }
-   public Laiva ammuKoordinaattiin(int x, int y, Ruudukko ruudukko){
-       
-       return null;
-   }  
+
+  
 }

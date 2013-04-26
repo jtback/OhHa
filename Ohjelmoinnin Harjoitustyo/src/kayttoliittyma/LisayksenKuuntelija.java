@@ -40,9 +40,11 @@ public class LisayksenKuuntelija implements ActionListener{
          System.out.println("vaakaan:"+vaakaan);
         if(lisattava.lisaaLaivaRuudukkoon(x, y, ruudukko, vaakaan)){
         Koordinaatti koordinaatti = ruudukko.koordinaattiTaulukosta(x, y);
-         ruudukko.tulostaRuudukko();
+        Laiva laiva= koordinaatti.getKoordinaatinLaiva();
+        lisaamo.merkkaaLaiva(laiva);
+        ruudukko.tulostaRuudukko();
          
-         boolean eiTyhja =lisaamo.seuraavaLisattava();
+         boolean eiTyhja =lisaamo.seuraavaLisattava();//Hakee laivastosta seuraavan ja palauttaa
          
         }
          }

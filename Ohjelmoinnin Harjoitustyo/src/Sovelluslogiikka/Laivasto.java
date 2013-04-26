@@ -17,7 +17,7 @@ import java.util.HashMap;
  */
 public class Laivasto {
     private ArrayList<Laiva>laivat;
-    private HashMap<Laiva, ArrayList<Koordinaatti>>laivojenKoordinaatit;
+
 
     public Laivasto() {
         laivat = new ArrayList<>();

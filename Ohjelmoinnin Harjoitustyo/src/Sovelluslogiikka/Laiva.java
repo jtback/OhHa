@@ -1,6 +1,5 @@
 package Sovelluslogiikka;
 
-
 import Sovelluslogiikka.Koordinaatti;
 import Sovelluslogiikka.AmpujanRuudukko;
 import Sovelluslogiikka.Peliruutu;
@@ -23,7 +22,6 @@ public class Laiva {
     private String nimi;
     private ArrayList<Koordinaatti> osumattomatKoordinaatit;
     private ArrayList<Koordinaatti> kaikkiKoordinaatit;
-    private boolean vaakaan;
 
     public Laiva(int koko, String nimi) {
         this.nimi = nimi;
@@ -45,6 +43,10 @@ public class Laiva {
             lisaaUponneetRuudut(ruudukko);
         }
 
+    }
+
+    public ArrayList<Koordinaatti> getKaikkiKoordinaatit() {
+        return kaikkiKoordinaatit;
     }
 
     /**
@@ -71,7 +73,7 @@ public class Laiva {
 
     @Override
     public String toString() {
-        return this.nimi+": pituus "+this.koko;
+        return this.nimi + ": pituus " + this.koko;
 
     }
     /* LisäälaivaRuudukkoon testaa onko kaikki pyydetyt koordinaatit vapaina. Jos
@@ -85,7 +87,7 @@ public class Laiva {
             for (int k = y; k < y + this.koko; k++) {
                 if (ruudukko.koordinaattiVapaana(x, k)) {
                     ruutujaVapaana++;
-                    //   System.out.println(vakio + "," + k + " vapaa");
+
                 }
             }
         } else {
@@ -109,28 +111,29 @@ public class Laiva {
             if (vaakaan) {
                 for (int muuttuva = y; muuttuva <= y + this.koko - 1; muuttuva++) {
                     Koordinaatti koordinaatti;
-
-                    ruudukko.koordinaattiTaulukkoon(x, muuttuva);
                     koordinaatti = ruudukko.koordinaattiTaulukosta(x, muuttuva);
-                    ruudukko.putLaivanKoordinaatti(koordinaatti, this);
-                    this.osumattomatKoordinaatit.add(koordinaatti);
-                    this.kaikkiKoordinaatit.add(koordinaatti);
+                    teeKirjanPito(koordinaatti, ruudukko);
                 }
             } else {
 
-
                 for (int muuttuva = x; muuttuva <= x + this.koko - 1; muuttuva++) {
                     Koordinaatti koordinaatti;
-                    ruudukko.koordinaattiTaulukkoon(muuttuva, y);
+
                     koordinaatti = ruudukko.koordinaattiTaulukosta(muuttuva, y);
-                    ruudukko.putLaivanKoordinaatti(koordinaatti, this);
-                    this.osumattomatKoordinaatit.add(koordinaatti);
-                    this.kaikkiKoordinaatit.add(koordinaatti);
+                    teeKirjanPito(koordinaatti, ruudukko);
                 }
             }
             return true;
         } else {
             return false;
         }
+    }
+
+    private void teeKirjanPito(Koordinaatti koordinaatti, Ruudukko ruudukko) {
+        koordinaatti.setKoordinaatinLaiva(this);
+        ruudukko.koordinaattiKaytetty(koordinaatti);
+        ruudukko.putLaivanKoordinaatti(koordinaatti, this);
+        this.osumattomatKoordinaatit.add(koordinaatti);
+        this.kaikkiKoordinaatit.add(koordinaatti);
     }
 }

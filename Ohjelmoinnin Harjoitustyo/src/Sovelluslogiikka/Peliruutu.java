@@ -54,7 +54,7 @@ public class Peliruutu {
     public boolean Osuuko(int x, int y) {
         Koordinaatti laukauksenKohde = this.kohderuudukko.koordinaattiTaulukosta(x, y);
         
-        if (laukauksenKohde == null) {
+        if (laukauksenKohde.getKoordinaatinLaiva() == null) {
             this.ruudussaEiLaivaa();
             return false;
         }

@@ -5,15 +5,18 @@
 package kayttoliittyma;
 
 import Kaynnistys.Paaohjelma;
+import Sovelluslogiikka.Koordinaatti;
 import Sovelluslogiikka.Laiva;
 import Sovelluslogiikka.Laivasto;
 import Sovelluslogiikka.Ruudukko;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -34,15 +37,15 @@ public class LaivojenLisays implements Runnable {
     private boolean vaakaanko;
     private Laivasto laivasto;
     private Laiva lisattava;
-    private Kayttoliittyma kayttoliittyma;
+    private AmpuminenGUI ampuminenGUI;
     private HashMap<String, JButton>  nappulataulu;
 
-    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, Kayttoliittyma k) {
+    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, AmpuminenGUI k) {
 
         this.ruudukko = ruudukko;
         this.Pelaaja = Pelaaja;
         this.laivasto = laivasto;
-        this.kayttoliittyma= k;
+        this.ampuminenGUI= k;
     }
     public boolean getVaakaanko(){
         return this.vaakaanko;
@@ -60,7 +63,7 @@ public class LaivojenLisays implements Runnable {
         return true;
         }else {
             frame.setVisible(false);
-            SwingUtilities.invokeLater(kayttoliittyma);
+            SwingUtilities.invokeLater(ampuminenGUI);
             return false;
         }
     }
@@ -120,18 +123,30 @@ public class LaivojenLisays implements Runnable {
         
         for (int i = 0; i < ruutujaSivulla; i++) {
             for (int j = 0; j < ruutujaSivulla; j++) {
-                JButton lisattavaNappi =new JButton("("+i+","+j+")");//Jos loisi luokan JNappula extends JButton
+                JButton lisattavaNappi =new JButton();
                 String teksti = lisattavaNappi.getText();
                 nappulataulu.put(teksti, lisattavaNappi);
                 LisayksenKuuntelija k= new LisayksenKuuntelija(ruudukko, i, j, this, lisattava );
                 lisattavaNappi.addActionListener(k);
+                Koordinaatti nappulanKoordinaatti = new Koordinaatti(i, j, lisattavaNappi);
+                ruudukko.koordinaattiTaulukkoon(nappulanKoordinaatti);
                 panel.add(lisattavaNappi);
             }
         }
        container.add(panel, BorderLayout.CENTER);
         container.add(panel2, BorderLayout.LINE_END);
     }
-   
+    private void paivitaNappula(JButton nappula){
+        nappula.setBackground(Color.yellow);
+        
+    }
+    public void merkkaaLaiva(Laiva laiva){
+        ArrayList<Koordinaatti> koordinaatit = laiva.getKaikkiKoordinaatit();
+        for(Koordinaatti k : koordinaatit){
+            paivitaNappula(k.getNappula());
+        }
+        
+    }
     
      public JFrame getFrame() {
         return frame;
