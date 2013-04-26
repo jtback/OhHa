@@ -20,6 +20,12 @@ public class Koordinaatti {
     private JButton nappula;
     private Laiva koordinaatinLaiva;
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param Nappula
+     */
     public Koordinaatti(int x, int y, JButton Nappula) {
         this.x = x;
         this.y = y;
@@ -28,33 +34,62 @@ public class Koordinaatti {
         
     }
 
+    /**
+     *
+     * @return
+     */
     public int getX() {
         return this.x;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getY() {
         return this.y;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getNappula() {
         return nappula;
     }
 
+    /**
+     *
+     * @param koordinaatinLaiva
+     */
     public void setKoordinaatinLaiva(Laiva koordinaatinLaiva) {
         this.koordinaatinLaiva = koordinaatinLaiva;
         System.out.println(this.toString());
     }
 
+    /**
+     *
+     * @return
+     */
     public Laiva getKoordinaatinLaiva() {
         return koordinaatinLaiva;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "("+this.x+","+this.y+")";
     }
 
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
