@@ -23,12 +23,15 @@ public class Laiva {
     private ArrayList<Koordinaatti> osumattomatKoordinaatit;
     private ArrayList<Koordinaatti> kaikkiKoordinaatit;
 
-    public Laiva(int koko, String nimi) {
+    private final Laivasto laivasto;
+
+    public Laiva(int koko, String nimi, Laivasto laivasto) {
         this.nimi = nimi;
         this.koko = koko;
         this.osumia = 0;
         this.osumattomatKoordinaatit = new ArrayList<>();
         this.kaikkiKoordinaatit = new ArrayList<>();
+        this.laivasto = laivasto;
     }
 
     public ArrayList<Koordinaatti> getOsumattomatKoordinaatit() {
@@ -41,6 +44,7 @@ public class Laiva {
         this.osumattomatKoordinaatit.remove(osumaKohta);
         if (this.osumattomatKoordinaatit.isEmpty()) {
             lisaaUponneetRuudut(ruudukko);
+            laivasto.poistaLaiva(this);
         }
 
     }

@@ -3,6 +3,7 @@ package kayttoliittyma;
 
 import Sovelluslogiikka.AmpujanRuudukko;
 import Sovelluslogiikka.AmpujanRuudukko;
+import Sovelluslogiikka.Laivasto;
 import Sovelluslogiikka.Peliruutu;
 import Sovelluslogiikka.Peliruutu;
 import Sovelluslogiikka.Ruudukko;
@@ -22,14 +23,27 @@ public class AmpuminenGUI implements Runnable {
     private JFrame frame;
     private Ruudukko kohderuudukko;
     private AmpujanRuudukko ammuntaruudukko;
+    public AmpuminenGUI vastustaja;
+    private Laivasto vastustajanLaivat;
   //  private JButton lisattavaNappi;
 
-    public AmpuminenGUI(Ruudukko ruudukko, AmpujanRuudukko ampuja) {
-         kohderuudukko = ruudukko;
-         ammuntaruudukko = ampuja;
+    public AmpuminenGUI(Ruudukko ruudukko, AmpujanRuudukko ampuja, Laivasto vastustajanLaivat) {
+         this.kohderuudukko = ruudukko;
+         this.ammuntaruudukko = ampuja;
+         this.vastustajanLaivat = vastustajanLaivat;
+         
          
     }
+    public void asetaNakyviin(){
+        frame.setVisible(true);
+    }
+    public void asetaNakymattomaksi(){
+    frame.setVisible(false);
+}
 
+    public void setVastustaja(AmpuminenGUI vastustaja) {
+        this.vastustaja = vastustaja;
+    }
     @Override
     public void run() {
         frame = new JFrame("LaivanUpotus");
@@ -53,7 +67,7 @@ public class AmpuminenGUI implements Runnable {
         for (int i = 0; i < ruutujaSivulla; i++) {
             for (int j = 0; j < ruutujaSivulla; j++) {
                 JButton lisattavaNappi =new JButton(peliruudut[i][j].getTila().toString());
-                NapinKuuntelija kuuntelija = new NapinKuuntelija(this.ammuntaruudukko, i, j, lisattavaNappi); 
+                NapinKuuntelija kuuntelija = new NapinKuuntelija(this.ammuntaruudukko, i, j, lisattavaNappi, this, vastustaja, vastustajanLaivat); 
                 lisattavaNappi.addActionListener(kuuntelija);
                 container.add(lisattavaNappi);
             }

@@ -5,6 +5,7 @@
 package kayttoliittyma;
 
 import Kaynnistys.Paaohjelma;
+import Sovelluslogiikka.Aloitus;
 import Sovelluslogiikka.Koordinaatti;
 import Sovelluslogiikka.Laiva;
 import Sovelluslogiikka.Laivasto;
@@ -39,13 +40,15 @@ public class LaivojenLisays implements Runnable {
     private Laiva lisattava;
     private AmpuminenGUI ampuminenGUI;
     private HashMap<String, JButton>  nappulataulu;
-
-    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, AmpuminenGUI k) {
+    private final Aloitus aloitus;
+    private boolean onPelaaja1;
+    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, Aloitus aloitus, boolean onPelaaja1) {
 
         this.ruudukko = ruudukko;
         this.Pelaaja = Pelaaja;
         this.laivasto = laivasto;
-        this.ampuminenGUI= k;
+        this.aloitus = aloitus;
+        this.onPelaaja1 = onPelaaja1;
     }
     public boolean getVaakaanko(){
         return this.vaakaanko;
@@ -57,14 +60,22 @@ public class LaivojenLisays implements Runnable {
     public void lisaysVaakaan(){
         vaakaanko = true;
     }
-    public boolean seuraavaLisattava(){
+    public void seuraavaLisattava(){
         if(!laivasto.listaOnTyhja()){ 
-        this.lisattava = laivasto.otaLaiva();
-        return true;
+        this.lisattava = laivasto.otaLaiva();        
         }else {
+            if(onPelaaja1){
+            aloitus.setPelaaja1Valmis(true);
+            aloitus.laivatAsemiin2();
+            }
+            else{
+                aloitus.setPelaaja2Valmis(true);
+                aloitus.ammuLaivastoja();
+            
+            }
             frame.setVisible(false);
-            SwingUtilities.invokeLater(ampuminenGUI);
-            return false;
+            frame.dispose();     
+            
         }
     }
     public Laiva getLisattava(){
@@ -84,7 +95,6 @@ public class LaivojenLisays implements Runnable {
     }
     private void luoKomponentit(Container container){
         int ruutujaSivulla = ruudukko.getSivunPituus();
-        System.out.println("ruutujaSivulla: "+ruutujaSivulla);
         GridLayout ruudut = new GridLayout(ruutujaSivulla, ruutujaSivulla);
         JPanel panel = new JPanel(ruudut);
         nappulataulu = new HashMap<>();
@@ -126,7 +136,7 @@ public class LaivojenLisays implements Runnable {
                 JButton lisattavaNappi =new JButton();
                 String teksti = lisattavaNappi.getText();
                 nappulataulu.put(teksti, lisattavaNappi);
-                LisayksenKuuntelija k= new LisayksenKuuntelija(ruudukko, i, j, this, lisattava );
+                LisayksenKuuntelija k= new LisayksenKuuntelija(ruudukko, i, j, this );
                 lisattavaNappi.addActionListener(k);
                 Koordinaatti nappulanKoordinaatti = new Koordinaatti(i, j, lisattavaNappi);
                 ruudukko.koordinaattiTaulukkoon(nappulanKoordinaatti);

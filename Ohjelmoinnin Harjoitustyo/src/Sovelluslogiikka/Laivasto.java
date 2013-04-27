@@ -29,6 +29,22 @@ public class Laivasto {
         Laiva laiva = laivat.remove(0);
         return laiva;
     }
+    public void poistaLaiva(Laiva laiva){
+        laivat.remove(laiva);
+        
+    }
+    public Laivasto kopioi(){
+        Laivasto kopio = new Laivasto();
+        for(Laiva l : laivat){
+            kopio.lisaaLaiva(l);
+        }return kopio;
+    }
+    public String toString(){
+        String rivi = "";
+        for(Laiva l: laivat){
+            rivi += l.toString();
+        }return rivi;
+    }
     public boolean listaOnTyhja(){
         if(laivat.isEmpty()){
             return true;
