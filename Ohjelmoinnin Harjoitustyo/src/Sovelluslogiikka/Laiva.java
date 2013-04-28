@@ -18,28 +18,38 @@ import java.util.ArrayList;
 public class Laiva {
 
     private int koko;
-    private int osumia;
     private String nimi;
     private ArrayList<Koordinaatti> osumattomatKoordinaatit;
     private ArrayList<Koordinaatti> kaikkiKoordinaatit;
     private final Laivasto laivasto;
 
+    /**
+     *
+     * @param koko
+     * @param nimi testausta varten, ja lisäämisvuoross on myös nähtävissä
+     * @param laivasto Laiva tietää mihin laivastoon kuuluu.
+     */
     public Laiva(int koko, String nimi, Laivasto laivasto) {
         this.nimi = nimi;
         this.koko = koko;
-        this.osumia = 0;
         this.osumattomatKoordinaatit = new ArrayList<>();
         this.kaikkiKoordinaatit = new ArrayList<>();
         this.laivasto = laivasto;
     }
 
+
     public ArrayList<Koordinaatti> getOsumattomatKoordinaatit() {
         return osumattomatKoordinaatit;
     }
 
+    /**
+     *
+     * @param osumaKohta
+     * @param ruudukko
+     */
     public void uusiOsuma(Koordinaatti osumaKohta, AmpujanRuudukko ruudukko) {
 
-        this.osumia = osumia + 1;
+
         this.osumattomatKoordinaatit.remove(osumaKohta);
         if (this.osumattomatKoordinaatit.isEmpty()) {
             lisaaUponneetRuudut(ruudukko);
@@ -55,7 +65,6 @@ public class Laiva {
     /**
      * Metodi kutsuu Ampujanruudukon metodia getRuudut, jotta pystytään
      * viittaamaan käsiteltävään Peliruutu-olioon.
-     *
      * @param ampujanRuudukko
      */
     public void lisaaUponneetRuudut(AmpujanRuudukko ampujanRuudukko) {
@@ -70,10 +79,11 @@ public class Laiva {
         }
     }
 
-    public int getOsumia() {
-        return osumia;
-    }
-
+    /**
+     * Testejä varten
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return this.nimi + ": pituus " + this.koko;
@@ -83,6 +93,15 @@ public class Laiva {
      ovat, niin kutsuu kullekin koordinaattiTaulukkoon -metodia, joka luo uuden koordinaattiolion.
      Lisäksi asettaa hashmappiin put-metodilla ko. koordinaatti avaimenaan arvoksi tämän laivaolion.*/
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param ruudukko , mihin ollaan lisäämässä this -laivaoliota
+     * @param vaakaan muuttuja joka on true kun pelaaja haluaa lisätä laivan
+     * vaakaan
+     * @return
+     */
     public boolean ruudutOvatVapaina(int x, int y, Ruudukko ruudukko, boolean vaakaan) {
         int ruutujaVapaana = 0;
 
@@ -108,6 +127,14 @@ public class Laiva {
         }
     }
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param ruudukko, mihin laiva lisätään.
+     * @param vaakaan, on true jos laivaa ollaan lisäämässä vaakaan
+     * @return palauttaa true jos laiva lisätään onnistuneesti, muutoin false.
+     */
     public boolean lisaaLaivaRuudukkoon(int x, int y, Ruudukko ruudukko, boolean vaakaan) {
 
         if (ruudutOvatVapaina(x, y, ruudukko, vaakaan)) {
@@ -115,7 +142,6 @@ public class Laiva {
                 for (int muuttuva = y; muuttuva <= y + this.koko - 1; muuttuva++) {
                     Koordinaatti koordinaatti;
                     koordinaatti = ruudukko.koordinaattiTaulukosta(x, muuttuva);
-                  //  System.out.println("lisaaLaivaRuudukkoon haetun koordinaatin arvo: "+koordinaatti);
                     teeKirjanPito(koordinaatti, ruudukko);
                 }
             } else {
@@ -123,7 +149,6 @@ public class Laiva {
                 for (int muuttuva = x; muuttuva <= x + this.koko - 1; muuttuva++) {
                     Koordinaatti koordinaatti;
                     koordinaatti = ruudukko.koordinaattiTaulukosta(muuttuva, y);
-//                    System.out.println("lisaaLaivaRuudukkoon haetun koordinaatin arvo: "+koordinaatti);
                     teeKirjanPito(koordinaatti, ruudukko);
                 }
             }
@@ -133,6 +158,12 @@ public class Laiva {
         }
     }
 
+    /**
+     * Tekee Laivan lisäämiseen liittyvän kirjanpidon.
+     *
+     * @param koordinaatti
+     * @param ruudukko
+     */
     private void teeKirjanPito(Koordinaatti koordinaatti, Ruudukko ruudukko) {
         koordinaatti.setKoordinaatinLaiva(this);
         ruudukko.koordinaattiKaytetty(koordinaatti);

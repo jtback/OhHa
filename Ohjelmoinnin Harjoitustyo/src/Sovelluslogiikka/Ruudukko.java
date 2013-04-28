@@ -20,6 +20,11 @@ public class Ruudukko {
     private HashMap<Koordinaatti, Laiva> laivojenKoordinaatit;
     private ArrayList<Koordinaatti> kaytetytKoordinaatit;
 
+    /**
+     *luodaan koordinaattitaulukko ja lista käytetyistä koordinaateista ja 
+     * Hashmap millä löytyy Laiva joka sijaitsee jossain koordinaatissa.
+     * @param sivunPituus
+     */
     public Ruudukko(int sivunPituus) {
         this.ruudukko = new Koordinaatti[sivunPituus][sivunPituus];
         this.sivunPituus = sivunPituus;
@@ -55,19 +60,37 @@ public class Ruudukko {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public HashMap<Koordinaatti, Laiva> getLaivojenKoordinaatit() {
 
         return laivojenKoordinaatit;
     }
 
+    /**
+     *Lisää koordinaatin listaan.
+     * @param k
+     */
     public void koordinaattiKaytetty(Koordinaatti k) {
         this.kaytetytKoordinaatit.add(k);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSivunPituus() {
         return this.sivunPituus;
     }
 
+    /**
+     *Tarkistaa koordinaatit mitä Laivanlisäysmetodi ehdottaa.
+     * @param x ensimmäinen koordinaatti
+     * @param y toinen koordinaatti
+     * @return 
+     */
     public boolean annetutKoordinaatitOk(int x, int y) {
         if (x >= this.sivunPituus || y >= this.sivunPituus) {
             return false;
@@ -79,6 +102,13 @@ public class Ruudukko {
         }
     }
 
+    /**
+     *Kysyy onko annetut koordinaatit ok ja tarkistaa onko ko. koordinaattia
+     * Käytettyjen listassa.
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean koordinaattiVapaana(int x, int y) {
 
         if (!this.annetutKoordinaatitOk(x, y)) {
@@ -93,6 +123,10 @@ public class Ruudukko {
         }
     }
 
+    /**
+     *Ohjelman rakentamisvaiheessa käytetty metodi, käytetään testauksessa
+     * @param koordinaatti
+     */
     public void koordinaattiTaulukkoon(Koordinaatti koordinaatti) {
         int x = koordinaatti.getX();
         int y = koordinaatti.getY();
@@ -100,6 +134,13 @@ public class Ruudukko {
 
     }
 
+    /**
+     *Jotta koordinaatteja käytettäessä käytettäisiin samoja koorkinaatti-olioita
+     * otetaan koordinaatti taulukosta.
+     * @param x
+     * @param y
+     * @return
+     */
     public Koordinaatti koordinaattiTaulukosta(int x, int y) {
         Koordinaatti k;
         k = this.ruudukko[x][y];
@@ -107,11 +148,18 @@ public class Ruudukko {
         return k;
     }
 
+    /**
+     *Testaus vaiheen metodi
+     * @return
+     */
     public String tulostaLaivojenKoordinaatit() {
         String rivi = this.laivojenKoordinaatit.toString();
         return rivi;
     }
 
+    /**
+     *Testausta varten, ja mahdollista tekstikäyttöliittymää varten.
+     */
     public void tulostaRuudukko() {
         for (int i = 0; i < this.sivunPituus; i++) {
             for (int j = 0; j < this.sivunPituus; j++) {

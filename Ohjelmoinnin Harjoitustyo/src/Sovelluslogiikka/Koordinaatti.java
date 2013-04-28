@@ -10,7 +10,9 @@ import javax.swing.JButton;
  */
 
 /**
- *
+ *Koordinaatti tuntee Laivan, joka on ko. koordinaatissa, sekä JButtonin, jonka
+ * tilaa pääsee päivittämään. Metodeina settereitä ja gettereitä, joita ei
+ * kommentoitu.
  * @author Jukka
  */
 public class Koordinaatti {

@@ -46,7 +46,7 @@ public class Aloitus {
     }
 
     /**
-     *
+     *Vastustajan nimen asettamista varten.
      * @param pelaaja1
      */
     public void setPelaaja1(String pelaaja1) {
@@ -54,7 +54,7 @@ public class Aloitus {
     }
 
     /**
-     *
+     *Vastustajan nimen asettamista varten
      * @param pelaaja2
      */
     public void setPelaaja2(String pelaaja2) {
@@ -62,7 +62,7 @@ public class Aloitus {
     }
 
     /**
-     *
+     *AloitusruutuGuilla asetettava
      * @param ruudukonKoko
      */
     public void setRuudukonKoko(int ruudukonKoko) {
@@ -70,7 +70,7 @@ public class Aloitus {
     }
 
     /**
-     *
+     *Tarvitaan, etteivät ikkunat aukea ennen aikojaan.
      * @param pelaaja1Valmis
      */
     public void setPelaaja1Valmis(boolean pelaaja1Valmis) {
@@ -78,7 +78,7 @@ public class Aloitus {
     }
 
     /**
-     *
+     *Tarvitaan etteivät ikkunat aukea ennen aikojaan.
      * @param pelaaja2Valmis
      */
     public void setPelaaja2Valmis(boolean pelaaja2Valmis) {
@@ -151,7 +151,7 @@ public class Aloitus {
     }
 
     /**
-     *
+     *Kutstutaan main() metodista. käynnistää Aloitusnäkymän
      */
     public void aloittaa() {
         AloitusruutuGUI aloitus = new AloitusruutuGUI(this);
