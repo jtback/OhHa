@@ -24,14 +24,14 @@ import javax.swing.WindowConstants;
  *
  * @author jtback
  */
-public class Aloitusruutu implements Runnable {
+public class AloitusruutuGUI implements Runnable {
 
     private JFrame frame;
     private Aloitus aloitus;
     private String pelaaja1;
     private String pelaaja2;
-
-    public Aloitusruutu(Aloitus aloitus) {
+    private ButtonGroup radionappulat;
+    public AloitusruutuGUI(Aloitus aloitus) {
         this.aloitus = aloitus;
         this.pelaaja1 = "";
         this.pelaaja2 = "";
@@ -59,7 +59,7 @@ public class Aloitusruutu implements Runnable {
         JPanel panel = new JPanel(tekstikentat);
         JLabel koonValinta = new JLabel("Valitse ruudukon koko:");
         panel.add(koonValinta);
-        ButtonGroup radionappulat = new ButtonGroup();
+        radionappulat = new ButtonGroup();
 
         JPanel valinnat = luoKokovalinta(radionappulat, 11);
         panel.add(valinnat);
@@ -97,7 +97,7 @@ public class Aloitusruutu implements Runnable {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("moi");
+                if(!radionappulat.isSelected(null)){
                 if(tarkistaSyotteet()){
                     aloitus.setPelaaja1(pelaaja1);
                     aloitus.setPelaaja2(pelaaja2);
@@ -106,6 +106,7 @@ public class Aloitusruutu implements Runnable {
                     
                             
                 }
+            }
             }
         };
 
@@ -118,11 +119,24 @@ public class Aloitusruutu implements Runnable {
     private JPanel luoKokovalinta(ButtonGroup radionappulat, int maksimiVaihtoehto) {
         GridLayout pino = new GridLayout(maksimiVaihtoehto / 2, 2);
         JPanel nappulapaneeli = new JPanel(pino);
+        
+        
+        
+        
         for (int i = 5; i <= maksimiVaihtoehto; i++) {
             String nappula = "" + i + "x" + i;
-            JRadioButton koko1 = new JRadioButton(nappula);
+            JRadioButton koko1;
+//            if(i == 5){
+//             koko1 = new JRadioButton(nappula, true);
+//             koko1.setActionCommand(nappula);
+//            }
+//            else{
+             koko1 = new JRadioButton(nappula);
+             koko1.setActionCommand(nappula);
+ //           }
             radionappulat.add(koko1);
             nappulapaneeli.add(koko1);
+
             KoonKuuntelija k = new KoonKuuntelija(aloitus);
 
             koko1.addActionListener(k);

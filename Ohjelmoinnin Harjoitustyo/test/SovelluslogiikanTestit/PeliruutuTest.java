@@ -1,3 +1,5 @@
+package SovelluslogiikanTestit;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -16,7 +18,7 @@ import static org.junit.Assert.*;
  * @author Jukka
  */
 public class PeliruutuTest {
-    Peliruutu 
+    Peliruutu pr;
     public PeliruutuTest() {
     }
     

@@ -21,9 +21,9 @@ public class LisayksenKuuntelija implements ActionListener {
     private boolean vaakaan;
     private Ruudukko ruudukko;
     private Laiva lisattava;
-    private LaivojenLisays lisaamo;
+    private LaivojenLisaysGUI lisaamo;
 
-    public LisayksenKuuntelija(Ruudukko ruudukko, int x, int y, LaivojenLisays lisaamo) {
+    public LisayksenKuuntelija(Ruudukko ruudukko, int x, int y, LaivojenLisaysGUI lisaamo) {
         this.x = x;
         this.y = y;
         this.ruudukko = ruudukko;

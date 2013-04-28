@@ -26,12 +26,14 @@ public class KoonKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
              String merkit=ae.getActionCommand();
-            int koko=0;
+
+          int koko=5;
         try {
             koko = ((Number)NumberFormat.getInstance().parse(merkit)).intValue();
         } catch (ParseException ex) {
             Logger.getLogger(KoonKuuntelija.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println("koko =");
                         
                        
                         aloitus.setRuudukonKoko(koko);

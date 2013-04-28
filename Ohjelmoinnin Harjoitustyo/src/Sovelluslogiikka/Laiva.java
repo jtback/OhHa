@@ -22,7 +22,6 @@ public class Laiva {
     private String nimi;
     private ArrayList<Koordinaatti> osumattomatKoordinaatit;
     private ArrayList<Koordinaatti> kaikkiKoordinaatit;
-
     private final Laivasto laivasto;
 
     public Laiva(int koko, String nimi, Laivasto laivasto) {
@@ -116,14 +115,15 @@ public class Laiva {
                 for (int muuttuva = y; muuttuva <= y + this.koko - 1; muuttuva++) {
                     Koordinaatti koordinaatti;
                     koordinaatti = ruudukko.koordinaattiTaulukosta(x, muuttuva);
+                  //  System.out.println("lisaaLaivaRuudukkoon haetun koordinaatin arvo: "+koordinaatti);
                     teeKirjanPito(koordinaatti, ruudukko);
                 }
             } else {
 
                 for (int muuttuva = x; muuttuva <= x + this.koko - 1; muuttuva++) {
                     Koordinaatti koordinaatti;
-
                     koordinaatti = ruudukko.koordinaattiTaulukosta(muuttuva, y);
+//                    System.out.println("lisaaLaivaRuudukkoon haetun koordinaatin arvo: "+koordinaatti);
                     teeKirjanPito(koordinaatti, ruudukko);
                 }
             }

@@ -64,7 +64,7 @@ public class Koordinaatti {
      */
     public void setKoordinaatinLaiva(Laiva koordinaatinLaiva) {
         this.koordinaatinLaiva = koordinaatinLaiva;
-        System.out.println(this.toString());
+
     }
 
     /**

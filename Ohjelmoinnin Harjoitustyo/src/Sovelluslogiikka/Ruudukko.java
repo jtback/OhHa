@@ -3,6 +3,7 @@ package Sovelluslogiikka;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import javax.swing.JButton;
 
 /*
  * To change this template, choose Tools | Templates
@@ -28,6 +29,21 @@ public class Ruudukko {
     }
 
     /**
+     * alustaRuudukko() toteutettu testausta varten. Normaalisti alustus
+     * tapahtuu LaivojenLisäyksen yhteydessä, jossa kuhunkin koordinaattiin
+     * liitetään yksilöllinen JButton.
+     *
+     * @param nappula
+     */
+    public void alustaRuudukko(JButton nappula) {
+        for (int i = 0; i < this.sivunPituus; i++) {
+            for (int j = 0; j < this.sivunPituus; j++) {
+                ruudukko[i][j] = new Koordinaatti(i, j, nappula);
+            }
+        }
+    }
+
+    /**
      * HashMappiin tallenetaan avaimena Koordinaatti-olioita joihin kiinnitetään
      * Laivaolioita.
      *
@@ -40,6 +56,7 @@ public class Ruudukko {
     }
 
     public HashMap<Koordinaatti, Laiva> getLaivojenKoordinaatit() {
+
         return laivojenKoordinaatit;
     }
 
@@ -51,7 +68,7 @@ public class Ruudukko {
         return this.sivunPituus;
     }
 
-    private boolean annetutKoordinaatitOk(int x, int y) {
+    public boolean annetutKoordinaatitOk(int x, int y) {
         if (x >= this.sivunPituus || y >= this.sivunPituus) {
             return false;
         }

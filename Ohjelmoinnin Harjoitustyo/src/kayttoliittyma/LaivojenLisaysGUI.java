@@ -30,7 +30,7 @@ import javax.swing.WindowConstants;
  *
  * @author Jukka
  */
-public class LaivojenLisays implements Runnable {
+public class LaivojenLisaysGUI implements Runnable {
 
     private JFrame frame;
     private Ruudukko ruudukko;
@@ -42,7 +42,9 @@ public class LaivojenLisays implements Runnable {
     private HashMap<String, JButton>  nappulataulu;
     private final Aloitus aloitus;
     private boolean onPelaaja1;
-    public LaivojenLisays(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, Aloitus aloitus, boolean onPelaaja1) {
+    
+    
+    public LaivojenLisaysGUI(Ruudukko ruudukko, String Pelaaja, Laivasto laivasto, Aloitus aloitus, boolean onPelaaja1) {
 
         this.ruudukko = ruudukko;
         this.Pelaaja = Pelaaja;
@@ -83,7 +85,7 @@ public class LaivojenLisays implements Runnable {
     }
     @Override
     public void run() {
-        frame = new JFrame("Lisää laivat");
+        frame = new JFrame(Pelaaja+", lisää laivat!");
         frame.setPreferredSize(new Dimension(600, 500));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

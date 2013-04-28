@@ -8,7 +8,7 @@ import Sovelluslogiikka.AmpujanRuudukko;
 import Sovelluslogiikka.Ruudukko;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
-import kayttoliittyma.LaivojenLisays;
+import kayttoliittyma.LaivojenLisaysGUI;
 
 /*
  * To change this template, choose Tools | Templates

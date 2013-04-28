@@ -32,6 +32,10 @@ public class Peliruutu {
         return tila;
     }
 
+    public void setTila(RuudunTila tila) {
+        this.tila = tila;
+    }
+
     public Peliruutu(Ruudukko Kohderuudut, AmpujanRuudukko ampujanRuudukko) {
         this.kohderuudukko = Kohderuudut;
         this.ampujanruudukko = ampujanRuudukko;

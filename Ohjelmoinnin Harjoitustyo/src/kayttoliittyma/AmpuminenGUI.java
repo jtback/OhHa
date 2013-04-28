@@ -1,6 +1,6 @@
 package kayttoliittyma;
 
-
+import Sovelluslogiikka.Aloitus;
 import Sovelluslogiikka.AmpujanRuudukko;
 import Sovelluslogiikka.AmpujanRuudukko;
 import Sovelluslogiikka.Laivasto;
@@ -25,28 +25,48 @@ public class AmpuminenGUI implements Runnable {
     private AmpujanRuudukko ammuntaruudukko;
     public AmpuminenGUI vastustaja;
     private Laivasto vastustajanLaivat;
-  //  private JButton lisattavaNappi;
+    private String pelaaja;
+    private Aloitus aloitus;
+    //  private JButton lisattavaNappi;
 
-    public AmpuminenGUI(Ruudukko ruudukko, AmpujanRuudukko ampuja, Laivasto vastustajanLaivat) {
-         this.kohderuudukko = ruudukko;
-         this.ammuntaruudukko = ampuja;
-         this.vastustajanLaivat = vastustajanLaivat;
-         
-         
+    public AmpuminenGUI(Ruudukko ruudukko, AmpujanRuudukko ampuja, Laivasto vastustajanLaivat, String pelaaja, Aloitus aloitus) {
+        this.kohderuudukko = ruudukko;
+        this.ammuntaruudukko = ampuja;
+        this.vastustajanLaivat = vastustajanLaivat;
+        this.pelaaja = pelaaja;
+        this.aloitus = aloitus;
+
     }
-    public void asetaNakyviin(){
+
+    public void asetaNakyviin() {
         frame.setVisible(true);
     }
-    public void asetaNakymattomaksi(){
-    frame.setVisible(false);
-}
 
+    public void asetaNakymattomaksi() {
+        frame.setVisible(false);
+    }
+    
+    public void suljeRuutu(){
+        frame.dispose();
+    }
+
+    public Aloitus getAloitus() {
+        return aloitus;
+    }
+
+    public String getPelaaja() {
+        return pelaaja;
+    }
+            
     public void setVastustaja(AmpuminenGUI vastustaja) {
         this.vastustaja = vastustaja;
     }
+    public void pelaaUudestaan(){
+       this.aloitus.laivatAsemiin();
+    }
     @Override
     public void run() {
-        frame = new JFrame("LaivanUpotus");
+        frame = new JFrame(pelaaja + "! AMMU VASTUSTAJAA!! ");
         frame.setPreferredSize(new Dimension(500, 500));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -62,18 +82,18 @@ public class AmpuminenGUI implements Runnable {
         GridLayout ruudukko = new GridLayout(ruutujaSivulla, ruutujaSivulla);
         container.setLayout(ruudukko);
         Peliruutu[][] peliruudut = this.ammuntaruudukko.getRuudut();
-        
+
 
         for (int i = 0; i < ruutujaSivulla; i++) {
             for (int j = 0; j < ruutujaSivulla; j++) {
-                JButton lisattavaNappi =new JButton(peliruudut[i][j].getTila().toString());
-                NapinKuuntelija kuuntelija = new NapinKuuntelija(this.ammuntaruudukko, i, j, lisattavaNappi, this, vastustaja, vastustajanLaivat); 
+                JButton lisattavaNappi = new JButton(peliruudut[i][j].getTila().toString());
+                LaukauksenKuuntelija kuuntelija = new LaukauksenKuuntelija(this.ammuntaruudukko, i, j, lisattavaNappi, this, vastustaja, vastustajanLaivat);
                 lisattavaNappi.addActionListener(kuuntelija);
                 container.add(lisattavaNappi);
             }
         }
 
-}
+    }
 
     public JFrame getFrame() {
         return frame;
