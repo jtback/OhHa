@@ -1,0 +1,48 @@
+
+Aihe: Laivanupotuspeli
+
+Peli‰ k‰ytt‰‰ kaksi pelaajaa, kumpikin vuorollaan.
+Ensiksi pelaajien nimi‰ ja ruudun kokoa kysyt‰‰n k‰ytt‰j‰lt‰.
+
+Kumpikin aloittaa lis‰‰m‰ll‰ laivansa ruudukkoon. 
+Laivoja on kolme ja ne ovat eri pituisia ja ne voivat olla pysty tai vaakasuorassa.
+
+Kumpikin ampuu vuorollaan. Ohjelma kertoo jos osuu ja jos uppoaa tai jos tulee huti.
+
+Pelin voi lopettaa kesken tai se loppuu kun jomman kumman kaikki laivat on upotettu.
+
+Uuden pelin voi aloittaa lopetusikkunassa, siten ett‰ pelaajien nimet ja ruudukon koko
+s‰ilyv‰t samoina.
+
+Rakenne kuvaus
+
+Ohjelman rakenne on jaettu kolmeen pakkaukseen.
+Ensimm‰isess‰ pakkauksessa on P‰‰ohjelma joka kutsuu 
+Sovelluslogiikka -pakkauksessa olevaa Aloitusluokkaa.
+
+Sovelluslogiika-pakkaus
+
+pakkauksessa on kaksi ruudukoita sis‰lt‰v‰‰ luokkaa 
+ruudukko ja AmpujanRuudukko. Ruudukkoon lis‰t‰‰n laivat
+ja se koostuu Koordinaatti- luokan olioista.
+
+AmpujanRuudukko koostuu Peliruutu-luokan olioista. Peliruutuluokan
+olioita k‰ytet‰‰n K‰yttˆliittym‰ -pakkauksen AmpuminenGUI-luokassa
+
+Laiva luokan olio  tuntee koordinaattinsa ja mihin laivastoon kuuluu.
+Laivasto luokka sis‰lt‰‰ siihen lis‰tyt Laivat. Sit‰ k‰ytet‰‰n lis‰tt‰ess‰
+laivoja ruudukkoon LaivojenLis‰ysGUI-luokassa
+
+
+K‰yttˆliittym‰- pakkaus
+
+Sovelluslogiikan aloitusluokka luo AloitusruutuGui:n jossa k‰ytt‰j‰t voivat lis‰t‰ nimens‰
+ja valita ruudukon koon. Kun kaikki kolme aloitus ruudun kuuntelijaa on kirjannut muuttujat
+Aloitusluokkaan kutsuu AloitusruutuGuin pelaaKuuntelija Aloituksen metodia joka kutsuu LaivojenLis‰ysGUI:ta,
+jonka nappien kuuntelijat osaavat lis‰t‰ laivat ruudukkoon.
+
+Kun Molempien laivat on poistettu Laivasto luokassa sijaitsevasta listasta kutsutaan AmpuminenGUIta molemmille.
+AmpuminenGUI P‰ivitt‰‰ Peliruutuja ja poistaa Laivasto luokan listast laivat kun ne uppoavat, K
+Kun toinen pelaajista saa upotettua viimeisen laivan kutsutaan LopetusGUIta, joka antaa mahdollisuuden uudelle
+pelille.
+

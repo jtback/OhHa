@@ -1,0 +1,184 @@
+Tuntikirjanpito
+
+Paras arvioni on 102 tuntia toteuma saattaa heittää ylöspäin kymmenisen tuntia.
+
+Tuntikirjanpidossa ole yrittänyt hyödyntää pomodoro -tekniikka. missä tomaatteja kertyi 115.
+Osa niistä on pidempiä kuin 25.min mikä johtuu siitä, että aina ei tajua kirjata mitä on tullut tehtyä. Ja jos tauko jää pitämättä, myös ajanoton aloitus jää tekemättä.
+
+Tomaatti -yksiköita on kertynyt 115, minkä pöristän noin 60 tunniksi.
+Loppurypistyksessä päätin luopua 25 kellosta, koska se oli häiriöksi. Torstai illasta sunnuntai-iltaan kertyi noin 32tuntia.
+
+ 
+
+thursday 25. apr 1 finished tomato
+15:22 - 15:48 Refactoroinnin miettimistä 
+tuesday 23. apr 9 finished tomatoes
+23:44 - 00:10 Laivastoa 
+19:59 - 23:32 Tauotonta työskentelyä tähän asti-matka Roopelle 40 min 
+18:46 - 19:12 Laivojen lisäys graafinen kayttis Gridlayout borderlayoutin sisään. 
+18:16 - 18:41 Laivojen lisäys graafinen kayttis 
+17:02 - 17:35 Laivojen lisäys graafinen kayttis 
+15:25 - 16:08 Laivojen lisäys graafinen kayttis 
+14:53 - 15:18 Java tutorials top-level-container 
+13:57 - 14:23 Jbuttonin käyttö API:in tutustumista 
+13:25 - 13:50 Jbuttonin käyttö API:in tutustumista Kirjaa yölle 1 tunti ja eilispäivälle 1,5 
+sunday 21. apr 4 finished tomatoes
+21:35 - 22:00 Kommentoinnit ja ehdotukset tehty 
+19:55 - 20:20 Kommentoinnit ja ehdotukset tehty 
+19:23 - 19:48 Jeren koodin tutkimista ja kommentointia ja ehdotuksia. 
+18:50 - 19:16 Jeren koodin tutkimista 
+saturday 20. apr 2 finished tomatoes
+00:34 - 01:02 Coderanch sivustolla sama probleema jollain, mutta ratkaisu oli outo 
+00:01 - 00:28 Gui materiaalin lukua repaint ei toimi? 
+friday 19. apr 2 finished tomatoes
+23:16 - 23:41 Gui materiaalin lukua repaint ei toimi? 
+22:45 - 23:10 Gui materiaalin lukua 
+thursday 18. apr 6 finished tomatoes
+18:36 - 19:01 Ruudukkoluokan testit tehty 
+18:03 - 18:28 Ruudukkoluokan testausta 
+12:45 - 13:12 Sekvenssikaaviota laivan lisäämisestä poikkittain 
+11:57 - 12:23 Sekvenssikaaviota laivan lisäämisestä poikkittain 
+11:21 - 11:46 Sekvenssikaaviota laivan lisäämisestä poikkittain 
+00:10 - 00:38 Sekvenssikaaviota upottavan laukauksen ampumisesta 
+wednesday 17. apr 4 finished tomatoes
+20:29 - 20:54 Sekvenssikaaviota 
+19:51 - 20:17 Sekvenssikaavio 
+19:21 - 19:46 mallinnuksen luentokalvoja 
+18:50 - 19:16 mallinnuksen luentokalvoja 
+
+thursday 11. apr 7 finished tomatoes
+17:24 - 23:07 Testauksen suunnittelu 
+16:29 - 16:54 Testauksen suunnittelu 
+15:57 - 16:22 Testauksen suunnittelua 
+14:38 - 15:16 OhHa ruutujen teko onnistui ei vielä kuuntelijoita 
+14:05 - 14:33 OhHa ruutujen teko? 
+09:38 - 10:03 Tietun kokeeseen lukua selainturvallisuus MAC-arvoista 
+09:07 - 09:33 Tietun kokeeseen lukua selainturvallisuus 
+wednesday 10. apr 6 finished tomatoes
+18:38 - 19:03 ongelman ratkaisu? 
+18:01 - 18:29 Miten luoda oikea määrä nappeja? 
+17:10 - 17:50 GridLayout ei rajoita nappien määrää kuin toisessa suunnassa 
+16:31 - 17:02 Laattikko ja Jotain containerin sisälle 
+16:00 - 16:25 GUI materiaaleja 
+14:34 - 14:59 GUI luokan aloitusta 
+tuesday 09. apr 6 finished tomatoes
+21:41 - 22:06 Miksi kaikki laivan ruudut eivät tule merkityksi uponnut merkillä 
+20:34 - 20:59 GUI materiaaleja, repaint 
+20:02 - 20:27 GUI materiaaleja, kuuntelijoista 
+11:16 - 11:41 GUI materiaaleja, kuuntelijoista ja eriyttämisestä 
+10:44 - 11:09 GUI materiaaleja 
+10:11 - 10:38 GUI materiaaleja 
+monday 08. apr 2 finished tomatoes
+18:35 - 19:02 GUI materiaaleja Oraclen sivuilta Layout Managers 
+16:33 - 16:58 GUI materiaaleja Oraclen sivuilta 
+friday 05. apr 4 finished tomatoes
+21:07 - 21:39 Oraclen ohjeita 
+20:27 - 20:59 Käyttis hiekkalaatikkoleikkejä Eka laatikko 
+19:55 - 20:21 Käyttis hiekkalaatikkoleikkejä 
+19:04 - 19:29 Tutustumista käyttöliittymän ohjeisiin 
+tuesday 02. apr 9 finished tomatoes
+16:10 - 16:35 Toimii! Voi lisätä laivoja ruudukkoon ja toisen ruudukon päivittyminen ammuttaessa onnistuu 
+15:39 - 16:04 kevyttä fiilistelyä ennen ampumisen testausta 
+15:07 - 15:32 Osumattomat lista getteri Ongelma Ruudukon toimittamisessa 
+14:32 - 14:57 Ruudukkojen toimittamista parametreinä ym. 
+14:01 - 14:26 Laiva ja Peliruutu Uppoaminen 
+13:29 - 13:54 ampumista ja ruudun tilan tulostus 
+10:28 - 10:53 Ampumista lisää 
+09:55 - 10:20 Amupumista Osuuko-metodi 
+09:24 - 09:49 Ampujan ruudukon alustus 
+sunday 31. mar 6 finished tomatoes
+21:23 - 21:51 Uusi luokka Ampujan Ruudut 
+20:43 - 21:08 Mihin kuuluu laukauksen koodi 
+18:51 - 19:16 Ruudun metodeita 
+18:07 - 18:33 Ruudulla alustettaessa arvo tuntematon 
+17:27 - 17:54 Enum ratkaistu 
+14:49 - 15:14 Enum? 
+saturday 30. mar 1 finished tomato
+19:42 - 20:09 Ruutu -luokan ongelma enummuuttujat? 
+friday 29. mar 5 finished tomatoes
+20:42 - 21:09 Testaamista pääohjelman avulla 
+19:58 - 20:32 Laivan lisääminen käyttyäen taulukkoa. 
+19:26 - 19:51 syötteen oikeellisuus koordinaatti 
+15:52 - 16:24 Koordinaatin lisäys ruudukkoon palauttaa boolean 
+15:14 - 15:45 Ruudukon muuttaminen Koordinaatteja sisältäväksi + setteri ja Getteri 
+monday 25. mar 3 finished tomatoes
+17:28 - 17:54 Laivan lisäystä ruudukkoon 
+16:54 - 17:22 Ammu ruudukkoon ongelma 
+15:47 - 16:12 Koordinaatti-luokan esitys 
+thursday 21. mar 3 finished tomatoes
+18:15 - 18:40 Pakkauksiin tutustumista 
+16:45 - 17:11 HT jatkokurssiun rajapintatehtävän kertausta 
+16:05 - 16:39 HT jatkokurssiun rajapintatehtävän kertausta 
+wednesday 20. mar 2 finished tomatoes
+19:50 - 20:15 HT Kertausta rajapintaluokista 
+18:03 - 18:33 Testauksen malleja 
+tuesday 19. mar 4 finished tomatoes
+21:39 - 22:05 Luokkakaavio mallinnuksen lukemista 
+17:06 - 17:32 Testausta ja Laivojen pääälekkäin menon ratkaisua. 
+16:19 - 16:55 Testauksen harjoittelemista 
+15:38 - 16:04 Testauksen harjoittelemista 
+sunday 17. mar 1 finished tomato
+17:04 - 17:33 Testausohjeisiin perehtymistä 
+friday 15. mar 2 finished tomatoes
+19:59 - 20:38 HT: Ohjelmoinnin kertausta tavara ja matkalaukku ja muutama tulostus metodi 
+18:55 - 19:44 HT: Ohjelmoinnin kertausta tavara ja matkalaukku 
+thursday 14. mar 3 finished tomatoes
+17:10 - 17:49 HT: Mallintamisen kertausta Matkakortti 
+16:32 - 17:02 HT: Mallintamisen kertausta Kello 
+15:42 - 16:27 HT: Mallintamisen kertausta 
+wednesday 13. mar 9 finished tomatoes
+20:22 - 21:01 HT: Kertausta Arvosanajakaumatehtävän kanssa 
+19:45 - 20:15 HT: Kertausta Arvosanajakaumatehtävän kanssa 
+18:35 - 19:01 HT: Kertausta Arvosanajakaumatehtävän kanssa 
+17:46 - 18:11 HT: Git tageistä Kertausta Luokkakaavion mallintamisesta 
+17:15 - 17:40 HT: Git basics luku 2.5 
+16:45 - 17:10 HT: Git basics luku 2.3 
+15:54 - 16:21 HT: Git basics luku 2.2 
+15:19 - 15:44 HT: Git basics luku 2 
+11:09 - 11:35 KJ: Luentokalvoja ennen luentoja 
+tuesday 12. mar 4 finished tomatoes
+20:59 - 21:48 Pushausta Gittiin 
+18:59 - 19:24 HT GIT-hubiin kirjautuminen SSH-avaimen luominen kone jumissa 
+18:01 - 18:34 HT GIT:n asentaminen ja käyttöohjekirjaan tutustumista 
+17:27 - 17:52 Harjoitustyön HT aloitus GIT ym. 
+monday 11. mar 3 finished tomatoes
+18:24 - 18:49 lisää tulostusohjelmaa 
+17:51 - 18:19 lisää tulostusohjelmaa 
+17:03 - 17:32 Kurssipistejärjestelmää 
+saturday 09. mar 3 finished tomatoes
+18:20 - 18:51 Arvosanojen tulostusohjelman yritystä 
+17:01 - 17:57 Arvosanojen tulostusohjelman pohdintaa. 
+14:08 - 14:33 StringUtils boolean 
+thursday 07. mar 11 finished tomatoes
+22:57 - 23:23 Kirjastotehtävän Kirja-luokka 
+18:25 - 19:06 Anna Mulle tähtitaivas... ja Kirjasto 
+17:10 - 18:19 Tähtitaivaan 2 metodia 
+16:29 - 16:54 Tähtitaivas satunnaisuus ym. 
+15:56 - 16:21 Päiväysten pyörittelyä lisää ja mallivastaukset. swap>haarautuminen>rekursio käännetyin parametrein 
+14:22 - 15:03 Päiväysten pyörittelyä 
+13:25 - 14:09 Joukkueet ja pelaajat järjestyksessä 
+12:20 - 13:18 Arraylist viittauksia luokasta toiseen huh huh! 
+11:32 - 11:58 Asuntovertailutehtävä 3:lla metodilla melko nopeasti.. Hyvä minä! 
+01:24 - 01:53 Lyyrakortin osat loppuun 
+00:39 - 01:18 Lyyrakortti ja palindromi 
+wednesday 06. mar 8 finished tomatoes
+23:34 - 00:07 Huoneen järjestelyä 
+19:47 - 20:16 Huoneen järjestelyä 
+18:46 - 19:14 ArrayList<Integer> ,for each 
+18:02 - 18:38 ArrayList<String> ,ym 
+17:26 - 17:52 Tehtävä keskiarvot parittomat ja parilliset 
+16:39 - 17:18 Tehtävä 4 summaa whilessä 
+14:23 - 15:06 Uudelleen asennusta 
+00:26 - 00:56 if else -syntaksi Salasanatehtävässä 
+tuesday 05. mar 3 finished tomatoes
+23:53 - 00:20 Oikean kertauspaketin etsiminen 
+18:48 - 19:16 Kaksi tod helppoa tehtävää. Viel en osaa käyttää ympäristöä 
+17:30 - 17:57 Tutustuin Ohjelmointiympäristön käyttöön 
+
+today 4 finished tomatoes
+20:59 - 21:48 Pushausta Gittiin 
+18:59 - 19:24 HT GIT-hubiin kirjautuminen SSH-avaimen luominen kone jumissa 
+18:01 - 18:34 HT GIT:n asentaminen ja käyttöohjekirjaan tutustumista 
+17:27 - 17:52 Harjoitustyön HT aloitus GIT ym. 
+Tehokasta työskentelyä ensimmäisestä tomaatista lähtien. poislukien puoli tuntia taukoihin.
+
